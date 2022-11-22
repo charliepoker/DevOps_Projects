@@ -88,22 +88,22 @@ We will setup a virtual host to test the PHP script, virtual host enables you to
 
 Create the directory for projectlamp using ‘mkdir’ command
 
-**`sudo mkdir /var/www/projectlamp`**
+**`sudo mkdir /var/www/lampstackpoject`**
 
 Next, assign ownership of the directory with your current system user:
 
-**`sudo chown -R $USER:$USER /var/www/projectlamp`**
+**`sudo chown -R $USER:$USER /var/www/lampstackpoject`**
 
 Create and open a new configuration file in Apache’s sites-available directory.
 
-**`sudo vi /etc/apache2/sites-available/projectlamp.conf`**
+**`sudo vi /etc/apache2/sites-available/lampstackpoject.conf`**
 
 ```
 <VirtualHost *:80>
-    ServerName projectlamp
-    ServerAlias www.projectlamp 
+    ServerName lampstackpoject
+    ServerAlias lampstackpoject 
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/projectlamp
+    DocumentRoot /var/www/lampstackpoject
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
@@ -116,15 +116,15 @@ list the new file in the sites-available directory.
 The output of the above command should be similar to this below
 
 ```
-000-default.conf  default-ssl.conf  projectlamp.conf
+000-default.conf  default-ssl.conf  lampstackpoject.conf
 ```
-Thus, we have set /var/www/projectlampl  as the root directory for Projectlamp.
+Thus, we have set /var/www/lampstackpoject  as the root directory for Lampstackpoject.
 
 Let us enable the new virtual host with the a2ensite command 
 
-**`sudo a2ensite projectlamp`**
+**`sudo a2ensite lampstackpoject`**
 
-![Enable projectlamp site](./images/enable-virtual-host.png)
+![Enable lampstackpoject site](./images/enable-virtual-host.png)
 
 
 Run the below command to check for syntax errors in the configuration file.
@@ -135,9 +135,9 @@ Reload Apache service for changes to take efffect
 
 **`sudo systemctl reload apache2`**
 
-**Create an index file in the projectlamp folder.**
+**Create an index file in the lampstackpoject folder.**
 ```
-sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
+sudo echo 'Hello LAMP stack poject from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
 ```
 
 Go to your browser and try to open your website URL using IP address:
@@ -178,7 +178,7 @@ Save and close the file, The Apache service needs to be restarted for the change
 
 Create a new file named index.php inside the projectlamp root folder:
 
-**`vim /var/www/projectlamp/index.php`**
+**`vim /var/www/lampstackpoject/index.php`**
 
 ```
 <?php
@@ -189,7 +189,7 @@ Refresh the webpage to get a display similar to the below screenshot.
 
 It is advisable to remove the file as it contains sensitive information about your server and php site config.
 
-**`sudo rm /var/www/projectlamp/index.php`**
+**`sudo rm /var/www/lampstackpoject/index.php`**
 
 **Thank you!!**
 
