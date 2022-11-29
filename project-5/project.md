@@ -81,7 +81,7 @@ Use mysql server's local IP address to connect from mysql client. MySQL server u
 
 
 
-![create database](./Images/create-db.png)
+![create database](./images/create-db.png)
 
 
 7. Grant privileges
@@ -108,7 +108,7 @@ Use mysql server's local IP address to connect from mysql client. MySQL server u
 11. Replace ‘127.0.0.1’ to ‘0.0.0.0’ like this:
 
 
-![Configure MySQL server](./Images/mysql-config.png)
+![Configure MySQL server](./images/mysql-config.png)
 
 
 
@@ -122,7 +122,7 @@ Show database
 
 **`Show databases;`**
 
-![show database](./Images/show-database.png)
+![show database](./images/show-database.png)
 
 
 
